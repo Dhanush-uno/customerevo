@@ -36,9 +36,10 @@ const Header = props => {
           <Link to="/">
             <img
               className="website-logo"
-              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+              src="https://res.cloudinary.com/dkjabp5gc/image/upload/v1723308065/Untitled_design_1_hwhjbo.png"
               alt="website logo"
             />
+            <p>voBuz</p>
           </Link>
 
           <button
@@ -58,7 +59,7 @@ const Header = props => {
           <Link to="/">
             <img
               className="website-logo"
-              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+              src="https://res.cloudinary.com/dkjabp5gc/image/upload/v1723308065/Untitled_design_1_hwhjbo.png"
               alt="website logo"
             />
           </Link>
@@ -71,7 +72,7 @@ const Header = props => {
 
             <li className="nav-menu-item">
               <Link to="/products" className="nav-link">
-                Products
+                Services
               </Link>
             </li>
 

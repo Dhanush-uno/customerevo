@@ -8,7 +8,7 @@ const Home = () => (
     <Header />
     <div className="home-container">
       <div className="home-content">
-        <h1 className="home-heading">Clothes That Get YOU Noticed</h1>
+        <h1 className="home-heading">Elevate Your Event Experience</h1>
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
           alt="clothes that get you noticed"
@@ -23,12 +23,12 @@ const Home = () => (
         </p>
         <Link to="/products">
           <button type="button" className="shop-now-button">
-            Shop Now
+            Book Service
           </button>
         </Link>
       </div>
       <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
+        src="https://i.pinimg.com/236x/23/fc/fd/23fcfd03787a8bc810466a36523aef1e.jpg"
         alt="clothes that get you noticed"
         className="home-desktop-img"
       />

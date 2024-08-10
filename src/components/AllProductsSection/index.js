@@ -10,23 +10,23 @@ import './index.css'
 
 const categoryOptions = [
   {
-    name: 'Clothing',
+    name: 'wedding',
     categoryId: '1',
   },
   {
-    name: 'Electronics',
+    name: 'Cooprates Events',
     categoryId: '2',
   },
   {
-    name: 'Appliances',
+    name: 'college fest',
     categoryId: '3',
   },
   {
-    name: 'Grocery',
+    name: 'Birthdays',
     categoryId: '4',
   },
   {
-    name: 'Toys',
+    name: 'conference ',
     categoryId: '5',
   },
 ]

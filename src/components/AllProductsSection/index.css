@@ -14,7 +14,7 @@
 @media screen and (min-width: 768px) {
   .all-products-container {
     margin-left: 30px;
-    width: 70%;
+    width: 100%;
   }
 }
 
@@ -36,7 +36,7 @@
 @media screen and (min-width: 768px) {
   .no-products-view {
     margin-left: 30px;
-    width: 70%;
+    width: 100%;
     padding-bottom: 0;
     margin-top: 0px;
   }

@@ -70,8 +70,7 @@ class ProductItemDetails extends Component {
         similarProductsData: updatedSimilarProductsData,
         apiStatus: apiStatusConstants.success,
       })
-    }
-    if (response.status === 404) {
+    } else if (response.status === 404) {
       this.setState({
         apiStatus: apiStatusConstants.failure,
       })
@@ -164,6 +163,7 @@ class ProductItemDetails extends Component {
                     className="quantity-controller-button"
                     onClick={this.onDecrementQuantity}
                     data-testid="minus"
+                    aria-label="decrease quantity"
                   >
                     <BsDashSquare className="quantity-controller-icon" />
                   </button>
@@ -173,6 +173,7 @@ class ProductItemDetails extends Component {
                     className="quantity-controller-button"
                     onClick={this.onIncrementQuantity}
                     data-testid="plus"
+                    aria-label="increase quantity"
                   >
                     <BsPlusSquare className="quantity-controller-icon" />
                   </button>
