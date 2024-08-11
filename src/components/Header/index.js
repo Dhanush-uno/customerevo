@@ -1,11 +1,22 @@
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
-
+import {useState} from 'react'
 import CartContext from '../../context/CartContext'
-
 import './index.css'
 
 const Header = props => {
+  const [searchInput, setSearchInput] = useState('')
+
+  const onChangeSearchInput = event => {
+    setSearchInput(event.target.value)
+  }
+
+  const onSearchSubmit = event => {
+    event.preventDefault()
+    // Implement search functionality or redirect to search results page
+    console.log('Search Input:', searchInput)
+  }
+
   const onClickLogout = () => {
     const {history} = props
     Cookies.remove('jwt_token')
@@ -39,9 +50,7 @@ const Header = props => {
               src="https://res.cloudinary.com/dkjabp5gc/image/upload/v1723308065/Untitled_design_1_hwhjbo.png"
               alt="website logo"
             />
-            <p>voBuz</p>
           </Link>
-
           <button
             type="button"
             className="nav-mobile-btn"
@@ -56,40 +65,52 @@ const Header = props => {
         </div>
 
         <div className="nav-bar-large-container">
-          <Link to="/">
-            <img
-              className="website-logo"
-              src="https://res.cloudinary.com/dkjabp5gc/image/upload/v1723308065/Untitled_design_1_hwhjbo.png"
-              alt="website logo"
-            />
-          </Link>
-          <ul className="nav-menu">
-            <li className="nav-menu-item">
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-            </li>
-
-            <li className="nav-menu-item">
-              <Link to="/products" className="nav-link">
-                Services
-              </Link>
-            </li>
-
-            <li className="nav-menu-item">
-              <Link to="/cart" className="nav-link">
-                Cart
-                {renderCartItemsCount()}
-              </Link>
-            </li>
-          </ul>
-          <button
-            type="button"
-            className="logout-desktop-btn"
-            onClick={onClickLogout}
-          >
-            Logout
-          </button>
+          <div className="title-logo">
+            <Link to="/">
+              <img
+                className="website-logo"
+                src="https://res.cloudinary.com/dkjabp5gc/image/upload/v1723308065/Untitled_design_1_hwhjbo.png"
+                alt="website logo"
+              />
+            </Link>
+            <p>EvoBuz</p>
+          </div>
+          <div className="nav-bar-large-contain">
+            <form className="search-bar-container" onSubmit={onSearchSubmit}>
+              <input
+                type="search"
+                value={searchInput}
+                onChange={onChangeSearchInput}
+                className="search-input"
+                placeholder="Search for services"
+              />
+            </form>
+            <ul className="nav-menu">
+              <li className="nav-menu-item">
+                <Link to="/" className="nav-link">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-menu-item">
+                <Link to="/products" className="nav-link">
+                  Services
+                </Link>
+              </li>
+              <li className="nav-menu-item">
+                <Link to="/cart" className="nav-link">
+                  Cart
+                  {renderCartItemsCount()}
+                </Link>
+              </li>
+            </ul>
+            <button
+              type="button"
+              className="logout-desktop-btn"
+              onClick={onClickLogout}
+            >
+              Logout
+            </button>
+          </div>
         </div>
       </div>
       <div className="nav-menu-mobile">
@@ -103,7 +124,6 @@ const Header = props => {
               />
             </Link>
           </li>
-
           <li className="nav-menu-item-mobile">
             <Link to="/products" className="nav-link">
               <img
